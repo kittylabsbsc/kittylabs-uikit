@@ -10,6 +10,9 @@ import UserBlock from "./components/UserBlock";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+// import ThemeSwitcher from "./components/ThemeSwitcher";
+import KittyPrice from "./components/KittyPrice";
+import LangSelector from "./components/LangSelector";
 
 const Wrapper = styled.div`
   position: relative;
@@ -123,24 +126,13 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
+          <KittyPrice kittyPriceUsd={kittyPriceUsd} />
+          {/* <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} /> */}
           <UserBlock account={account} login={login} logout={logout} />
-          {profile && <Avatar profile={profile} />}
+          <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} />
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        <Panel
-          isPushed={isPushed}
-          isMobile={isMobile}
-          showMenu={showMenu}
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          kittyPriceUsd={kittyPriceUsd}
-          pushNav={setIsPushed}
-          links={links}
-        />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>

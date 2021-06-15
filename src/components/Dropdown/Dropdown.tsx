@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { DropdownProps, PositionProps, Position } from "./types";
 
 const getLeft = ({ position }: PositionProps) => {
-  if (position === "top-right") {
+  if (position === "bottom-left") {
     return "100%";
   }
   return "50%";

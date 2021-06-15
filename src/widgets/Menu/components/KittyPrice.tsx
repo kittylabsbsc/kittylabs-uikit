@@ -11,6 +11,7 @@ interface Props {
 const PriceLink = styled.a`
   display: flex;
   align-items: center;
+  margin-right: 10px;
   svg {
     transition: transform 0.3s;
   }
@@ -23,7 +24,7 @@ const PriceLink = styled.a`
 
 const KittyPrice: React.FC<Props> = ({ kittyPriceUsd }) => {
   return kittyPriceUsd ? (
-    <PriceLink href="https://kittyswap.info/token/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82" target="_blank">
+    <PriceLink href="https://info.cheeseswap.app/#/token/0x5b4963b964bac5c2db83e53fffe46e0cb83a1346" target="_blank">
       <KittyRoundIcon width="24px" mr="8px" />
       <Text color="textSubtle" bold>{`$${kittyPriceUsd.toFixed(3)}`}</Text>
     </PriceLink>
